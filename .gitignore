@@ -1,0 +1,27 @@
+# Unicode Fortress - Git Ignore
+
+# Log files
+*.log
+
+# Quarantine directory
+unicode_quarantine/
+
+# Old versions
+*_OLD.py
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Test files
+test_*.py
+*_test_*.txt

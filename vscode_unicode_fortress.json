@@ -1,0 +1,41 @@
+{
+  // UNICODE FORTRESS - VSCode Settings
+  // Force UTF-8 encoding for all files
+  
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+  "[python]": {
+    "files.encoding": "utf8"
+  },
+  "[powershell]": {
+    "files.encoding": "utf8"
+  },
+  "[json]": {
+    "files.encoding": "utf8"
+  },
+  "[markdown]": {
+    "files.encoding": "utf8"
+  },
+  "[javascript]": {
+    "files.encoding": "utf8"
+  },
+  "[typescript]": {
+    "files.encoding": "utf8"
+  },
+  
+  // Auto-save and formatting
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.formatOnSave": true,
+  
+  // Prevent problematic insertions
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "editor.unicodeHighlight.nonBasicASCII": true,
+  
+  // Terminal encoding
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  }
+}
