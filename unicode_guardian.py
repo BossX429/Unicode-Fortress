@@ -14,7 +14,6 @@ import shutil
 # Monitoring configuration
 WATCH_DIRS = [
     r"C:\Projects",
-    r"C:\AI-Librarian",
     r"C:\repos"
 ]
 
@@ -62,7 +61,7 @@ def quarantine_file(filepath):
     quarantine_path = Path(QUARANTINE_DIR) / f"{timestamp}_{filename}"
     
     shutil.copy2(filepath, quarantine_path)
-    log(f"  ⚠️  QUARANTINED: {filepath} -> {quarantine_path}")
+    log(f"    QUARANTINED: {filepath} -> {quarantine_path}")
     return quarantine_path
 
 def fix_file_encoding(filepath):
@@ -91,10 +90,10 @@ def fix_file_encoding(filepath):
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(decoded)
         
-        log(f"  ✅ FIXED: {filepath}")
+        log(f"   FIXED: {filepath}")
         return True
     except Exception as e:
-        log(f"  ❌ FAILED to fix {filepath}: {e}")
+        log(f"   FAILED to fix {filepath}: {e}")
         return False
 
 
@@ -115,7 +114,7 @@ def scan_directory(directory):
                 is_clean, reason = check_file_encoding(filepath)
                 
                 if not is_clean:
-                    log(f"🚨 REAL CORRUPTION DETECTED: {filepath}")
+                    log(f" REAL CORRUPTION DETECTED: {filepath}")
                     log(f"   Reason: {reason}")
                     
                     # Quarantine then fix
@@ -128,7 +127,7 @@ def scan_directory(directory):
 def main():
     """Main guardian loop"""
     log("=" * 60)
-    log("🛡️  UNICODE FORTRESS GUARDIAN V2 STARTED (FIXED DETECTION)")
+    log("  UNICODE FORTRESS GUARDIAN V2 STARTED (FIXED DETECTION)")
     log("=" * 60)
     log(f"Watching directories: {', '.join(WATCH_DIRS)}")
     log(f"Scan interval: {SCAN_INTERVAL}s")
@@ -154,19 +153,19 @@ def main():
                     total_issues += issues
             
             if total_issues > 0:
-                log(f"⚠️  Found and fixed {total_issues} REAL corrupted files out of {total_files} checked")
+                log(f"  Found and fixed {total_issues} REAL corrupted files out of {total_files} checked")
             else:
-                log(f"✅ All {total_files} files are valid UTF-8")
+                log(f" All {total_files} files are valid UTF-8")
             
             log(f"Next scan in {SCAN_INTERVAL}s...")
             log("")
             time.sleep(SCAN_INTERVAL)
             
         except KeyboardInterrupt:
-            log("🛑 Guardian stopped by user")
+            log(" Guardian stopped by user")
             break
         except Exception as e:
-            log(f"❌ Error in guardian loop: {e}")
+            log(f" Error in guardian loop: {e}")
             time.sleep(SCAN_INTERVAL)
 
 if __name__ == "__main__":

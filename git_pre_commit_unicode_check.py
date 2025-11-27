@@ -61,11 +61,11 @@ def main():
     
     if corrupted_files:
         print("\n" + "=" * 60)
-        print("🚨 UNICODE FORTRESS: COMMIT BLOCKED")
+        print(" UNICODE FORTRESS: COMMIT BLOCKED")
         print("=" * 60)
         print("The following files have Unicode corruption:\n")
         for filepath, reason in corrupted_files:
-            print(f"  ❌ {filepath}")
+            print(f"   {filepath}")
             print(f"     Reason: {reason}\n")
         print("Fix these files before committing!")
         print("Run: python C:\\Users\\kyleh\\unicode_guardian.py")

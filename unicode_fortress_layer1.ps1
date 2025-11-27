@@ -11,9 +11,9 @@ try {
     # Enable UTF-8 system-wide
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Nls\CodePage" -Name "ACP" -Value "65001" -Force
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Nls\CodePage" -Name "OEMCP" -Value "65001" -Force
-    Write-Host "  ✅ System UTF-8 encoding enforced" -ForegroundColor Green
+    Write-Host "   System UTF-8 encoding enforced" -ForegroundColor Green
 } catch {
-    Write-Host "  ⚠️  Failed (need admin): $_" -ForegroundColor Red
+    Write-Host "    Failed (need admin): $_" -ForegroundColor Red
 }
 
 # Set user environment variables
@@ -22,9 +22,9 @@ Write-Host "[2/5] Setting user environment variables..." -ForegroundColor Yellow
 [Environment]::SetEnvironmentVariable("PYTHONIOENCODING", "utf-8", "User")
 [Environment]::SetEnvironmentVariable("PYTHONUTF8", "1", "User")
 [Environment]::SetEnvironmentVariable("LC_ALL", "en_US.UTF-8", "User")
-Write-Host "  ✅ PYTHONIOENCODING=utf-8" -ForegroundColor Green
-Write-Host "  ✅ PYTHONUTF8=1" -ForegroundColor Green
-Write-Host "  ✅ LC_ALL=en_US.UTF-8" -ForegroundColor Green
+Write-Host "   PYTHONIOENCODING=utf-8" -ForegroundColor Green
+Write-Host "   PYTHONUTF8=1" -ForegroundColor Green
+Write-Host "   LC_ALL=en_US.UTF-8" -ForegroundColor Green
 
 # Set system environment variables
 Write-Host ""
@@ -32,9 +32,9 @@ Write-Host "[3/5] Setting system environment variables..." -ForegroundColor Yell
 try {
     [Environment]::SetEnvironmentVariable("PYTHONIOENCODING", "utf-8", "Machine")
     [Environment]::SetEnvironmentVariable("PYTHONUTF8", "1", "Machine")
-    Write-Host "  ✅ System-wide Python UTF-8 enforced" -ForegroundColor Green
+    Write-Host "   System-wide Python UTF-8 enforced" -ForegroundColor Green
 } catch {
-    Write-Host "  ⚠️  Failed (need admin): $_" -ForegroundColor Red
+    Write-Host "    Failed (need admin): $_" -ForegroundColor Red
 }
 
 # Configure PowerShell to always use UTF-8
@@ -53,9 +53,9 @@ if (Test-Path $psProfile) {
     $content = Get-Content $psProfile -Raw
     if ($content -notmatch "UNICODE FORTRESS") {
         Add-Content -Path $psProfile -Value "`n$utf8Config" -Encoding UTF8
-        Write-Host "  ✅ PowerShell profile configured for UTF-8" -ForegroundColor Green
+        Write-Host "   PowerShell profile configured for UTF-8" -ForegroundColor Green
     } else {
-        Write-Host "  ℹ️  PowerShell already configured" -ForegroundColor Cyan
+        Write-Host "  ℹ  PowerShell already configured" -ForegroundColor Cyan
     }
 }
 
@@ -66,8 +66,8 @@ git config --global core.quotepath false
 git config --global gui.encoding utf-8
 git config --global i18n.commit.encoding utf-8
 git config --global i18n.logoutputencoding utf-8
-Write-Host "  ✅ Git configured for UTF-8" -ForegroundColor Green
+Write-Host "   Git configured for UTF-8" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "=== LAYER 1 COMPLETE ===" -ForegroundColor Green
-Write-Host "⚠️  REBOOT REQUIRED for system-wide changes to take effect!" -ForegroundColor Yellow
+Write-Host "  REBOOT REQUIRED for system-wide changes to take effect!" -ForegroundColor Yellow

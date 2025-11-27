@@ -1,11 +1,11 @@
-# 🛡️ UNICODE FORTRESS - COMPLETE PROTECTION SYSTEM
+#  UNICODE FORTRESS - COMPLETE PROTECTION SYSTEM
 
 ## WHAT IT DOES
 **Prevents Unicode corruption from EVER happening again on your system!**
 
 ## 4-LAYER DEFENSE SYSTEM
 
-### ⚡ LAYER 1: System-Wide UTF-8 Enforcement
+###  LAYER 1: System-Wide UTF-8 Enforcement
 **What:** Forces Windows to use UTF-8 everywhere
 **How:**
 - Registry settings for system-wide UTF-8
@@ -18,7 +18,7 @@
 
 ---
 
-### 🔍 LAYER 2: Real-Time Guardian
+###  LAYER 2: Real-Time Guardian
 **What:** Constantly monitors and auto-fixes corrupted files
 **How:**
 - Scans every 30 seconds
@@ -47,7 +47,7 @@ Get-Content C:\Users\kyleh\unicode_guardian.log -Tail 50
 
 ---
 
-### 🚫 LAYER 3: Git Pre-Commit Protection
+###  LAYER 3: Git Pre-Commit Protection
 **What:** Blocks commits containing Unicode corruption
 **How:**
 - Runs before every git commit
@@ -61,7 +61,7 @@ Get-Content C:\Users\kyleh\unicode_guardian.log -Tail 50
 
 ---
 
-### 💻 LAYER 4: VSCode UTF-8 Enforcement
+###  LAYER 4: VSCode UTF-8 Enforcement
 **What:** Forces VSCode to always use UTF-8
 **How:**
 - Sets encoding to UTF-8 for all file types
@@ -89,13 +89,13 @@ C:\Users\kyleh\INSTALL_UNICODE_FORTRESS.ps1
 4. Updates VSCode settings
 5. Sets environment variables
 
-**⚠️ REBOOT REQUIRED after installation!**
+** REBOOT REQUIRED after installation!**
 
 ---
 
 ## PROTECTION FEATURES
 
-### ✅ What's Protected:
+###  What's Protected:
 - All Python files (.py)
 - PowerShell scripts (.ps1, .bat)
 - JSON files (.json)
@@ -103,13 +103,13 @@ C:\Users\kyleh\INSTALL_UNICODE_FORTRESS.ps1
 - Text files (.txt)
 - JavaScript/TypeScript (.js, .ts)
 
-### ✅ Where It's Protected:
+###  Where It's Protected:
 - C:\Projects
 - C:\AI-Librarian
 - C:\repos
 - All subdirectories
 
-### ✅ How It Protects:
+###  How It Protects:
 1. **Prevention:** System forces UTF-8 everywhere
 2. **Detection:** Real-time scanning every 30s
 3. **Quarantine:** Corrupted files backed up instantly
@@ -200,10 +200,10 @@ python C:\Users\kyleh\git_pre_commit_unicode_check.py
 ## GUARANTEE
 
 **This system provides COMPLETE protection:**
-1. ✅ Can't create corrupted files (system forces UTF-8)
-2. ✅ Can't save corrupted files (VSCode enforces UTF-8)
-3. ✅ Can't keep corrupted files (Guardian auto-fixes)
-4. ✅ Can't commit corrupted files (Git hook blocks)
+1.  Can't create corrupted files (system forces UTF-8)
+2.  Can't save corrupted files (VSCode enforces UTF-8)
+3.  Can't keep corrupted files (Guardian auto-fixes)
+4.  Can't commit corrupted files (Git hook blocks)
 
 **Unicode corruption is IMPOSSIBLE with all layers active!**
 
@@ -228,4 +228,4 @@ python C:\Users\kyleh\unicode_guardian.py
 dir C:\Users\kyleh\unicode_quarantine
 ```
 
-**YOU ARE NOW FORTIFIED! 🛡️**
+**YOU ARE NOW FORTIFIED! **
