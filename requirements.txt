@@ -1,0 +1,16 @@
+# Unicode-Fortress Requirements
+# All functionality uses Python standard library only
+# No external dependencies required!
+
+# Core modules used:
+# - os (file operations)
+# - sys (system operations)
+# - pathlib (path handling)
+# - datetime (timestamps)
+# - shutil (file copying)
+# - subprocess (git operations)
+# - re (regex for pattern matching)
+
+# Optional: For development
+# pytest>=7.0.0  # Uncomment for testing
+# pylint>=2.0.0  # Uncomment for code quality checks
