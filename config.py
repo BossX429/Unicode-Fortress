@@ -49,7 +49,7 @@ def show_config():
     print("=" * 60)
     print("Watched Directories:")
     for watch_dir in WATCH_DIRS:
-        exists = "✓" if watch_dir.exists() else "✗"
+        exists = "" if watch_dir.exists() else ""
         print(f"  {exists} {watch_dir}")
     print("=" * 60)
     print(f"Scan Interval:  {SCAN_INTERVAL}s")
