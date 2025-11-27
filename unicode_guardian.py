@@ -79,7 +79,7 @@ def fix_file_encoding(filepath):
             try:
                 decoded = content.decode(encoding)
                 break
-            except:
+            except (UnicodeDecodeError, LookupError):
                 continue
         
         if decoded is None:
