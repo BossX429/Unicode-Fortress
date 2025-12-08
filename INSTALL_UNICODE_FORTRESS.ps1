@@ -95,7 +95,7 @@ python "C:/Users/kyleh/git_pre_commit_unicode_check.py"
         Set-Content -Path $hookPath -Value $hookContent -Encoding UTF8 -Force
         Write-Host "   Hook installed" -ForegroundColor Green
     } else {
-        Write-Host "  ⏭  Not a git repo: $repo" -ForegroundColor Gray
+        Write-Host "  ?  Not a git repo: $repo" -ForegroundColor Gray
     }
 }
 
@@ -133,7 +133,7 @@ if (Test-Path $vscodeSettingsPath) {
     
     Write-Host "   VSCode settings updated" -ForegroundColor Green
 } else {
-    Write-Host "  ⏭  VSCode not found, skipping" -ForegroundColor Gray
+    Write-Host "  ?  VSCode not found, skipping" -ForegroundColor Gray
 }
 
 Write-Host ""

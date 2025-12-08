@@ -11,16 +11,20 @@ from pathlib import Path
 from datetime import datetime
 import shutil
 
-# Monitoring configuration
-WATCH_DIRS = [
-    r"C:\Projects",
-    r"C:\repos"
-]
-
-WATCH_EXTENSIONS = ['.py', '.ps1', '.bat', '.json', '.md', '.txt', '.js', '.ts']
-SCAN_INTERVAL = 30  # seconds
-LOG_FILE = r"C:\Users\kyleh\unicode_guardian.log"
-QUARANTINE_DIR = r"C:\Users\kyleh\unicode_quarantine"
+# Import configuration
+try:
+    from config import WATCH_DIRS, WATCH_EXTENSIONS, SCAN_INTERVAL, LOG_FILE, QUARANTINE_DIR, ensure_directories
+except ImportError:
+    # Fallback if config not found
+    from pathlib import Path
+    USER_HOME = Path(os.getenv('USERPROFILE', os.path.expanduser('~')))
+    WATCH_DIRS = [Path(r"C:\Projects"), Path(r"C:\repos")]
+    WATCH_EXTENSIONS = ['.py', '.ps1', '.bat', '.json', '.md', '.txt', '.js', '.ts']
+    SCAN_INTERVAL = 30
+    LOG_FILE = USER_HOME / "unicode_guardian.log"
+    QUARANTINE_DIR = USER_HOME / "unicode_quarantine"
+    def ensure_directories():
+        QUARANTINE_DIR.mkdir(parents=True, exist_ok=True)
 
 def log(message):
     """Log to file and console"""
@@ -29,10 +33,6 @@ def log(message):
     print(log_message)
     with open(LOG_FILE, 'a', encoding='utf-8') as f:
         f.write(log_message + '\n')
-
-def ensure_quarantine_dir():
-    """Ensure quarantine directory exists"""
-    Path(QUARANTINE_DIR).mkdir(parents=True, exist_ok=True)
 
 def check_file_encoding(filepath):
     """Check if file has REAL UTF-8 encoding issues"""
@@ -55,7 +55,7 @@ def check_file_encoding(filepath):
 
 def quarantine_file(filepath):
     """Move corrupted file to quarantine"""
-    ensure_quarantine_dir()
+    ensure_directories()
     filename = Path(filepath).name
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     quarantine_path = Path(QUARANTINE_DIR) / f"{timestamp}_{filename}"
@@ -129,7 +129,7 @@ def main():
     log("=" * 60)
     log("  UNICODE FORTRESS GUARDIAN V2 STARTED (FIXED DETECTION)")
     log("=" * 60)
-    log(f"Watching directories: {', '.join(WATCH_DIRS)}")
+    log(f"Watching directories: {', '.join(str(d) for d in WATCH_DIRS)}")
     log(f"Scan interval: {SCAN_INTERVAL}s")
     log(f"Quarantine: {QUARANTINE_DIR}")
     log("")

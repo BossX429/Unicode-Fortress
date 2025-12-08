@@ -18,24 +18,24 @@ SYSTEM: Windows 11 | Intel i7-12700K | AMD 7900XTX
    - PowerShell profile: UTF-8 enforced
    - Git global config: UTF-8 enforced
    - Environment variables: Set
-     • PYTHONIOENCODING=utf-8
-     • PYTHONUTF8=1
-     • LC_ALL=en_US.UTF-8
+     * PYTHONIOENCODING=utf-8
+     * PYTHONUTF8=1
+     * LC_ALL=en_US.UTF-8
    
      System-level registry: Requires admin reboot
    
  LAYER 2: GUARDIAN V2 (REAL-TIME MONITORING)
    Status: RUNNING + AUTO-START ON BOOT CONFIGURED
    - Windows Scheduled Task: CREATED 
-     • Task Name: UnicodeGuardian
-     • Trigger: At Startup
-     • State: Ready
+     * Task Name: UnicodeGuardian
+     * Trigger: At Startup
+     * State: Ready
    - Currently Active: YES (PID running since 02:48:49)
    - Scan Interval: 30 seconds
    - Directories Watched:
-     • C:\Projects
-     • C:\AI-Librarian
-     • C:\repos
+     * C:\Projects
+     * C:\AI-Librarian
+     * C:\repos
    - Detection: FIXED (no false positives!)
    - Files Monitored: 251
    - Corruption Found: 0 (all clean!)
@@ -43,8 +43,8 @@ SYSTEM: Windows 11 | Intel i7-12700K | AMD 7900XTX
  LAYER 3: GIT PRE-COMMIT PROTECTION
    Status: INSTALLED
    - Repos Protected: 2
-     • C:\Projects\kyleh
-     • C:\repos\AI-Librarian
+     * C:\Projects\kyleh
+     * C:\repos\AI-Librarian
    - Hook Type: pre-commit
    - Function: Blocks commits with Unicode corruption
    
@@ -86,19 +86,19 @@ DEFENSE MECHANISMS:
 
 
 Guardian:
-  • Script: C:\Users\kyleh\unicode_guardian.py
-  • Log: C:\Users\kyleh\unicode_guardian.log
-  • Quarantine: C:\Users\kyleh\unicode_quarantine
+  * Script: C:\Users\kyleh\unicode_guardian.py
+  * Log: C:\Users\kyleh\unicode_guardian.log
+  * Quarantine: C:\Users\kyleh\unicode_quarantine
 
 Installation Scripts:
-  • Layer 1: C:\Users\kyleh\unicode_fortress_layer1.ps1
-  • Git Hook: C:\Users\kyleh\git_pre_commit_unicode_check.py
-  • VSCode: C:\Users\kyleh\vscode_fortress_clean.json
-  • Master Installer: C:\Users\kyleh\INSTALL_UNICODE_FORTRESS.ps1
+  * Layer 1: C:\Users\kyleh\unicode_fortress_layer1.ps1
+  * Git Hook: C:\Users\kyleh\git_pre_commit_unicode_check.py
+  * VSCode: C:\Users\kyleh\vscode_fortress_clean.json
+  * Master Installer: C:\Users\kyleh\INSTALL_UNICODE_FORTRESS.ps1
 
 Documentation:
-  • README: C:\Users\kyleh\UNICODE_FORTRESS_README.md
-  • This Status: C:\Users\kyleh\UNICODE_FORTRESS_STATUS.txt
+  * README: C:\Users\kyleh\UNICODE_FORTRESS_README.md
+  * This Status: C:\Users\kyleh\UNICODE_FORTRESS_STATUS.txt
 
 
  MONITORING COMMANDS
@@ -145,15 +145,15 @@ AFTER FORTRESS:
 
 
 CURRENTLY:
-  • Guardian is scanning every 30 seconds
-  • All files are protected
-  • Git hooks will block bad commits
-  • VSCode forces UTF-8 on all edits
+  * Guardian is scanning every 30 seconds
+  * All files are protected
+  * Git hooks will block bad commits
+  * VSCode forces UTF-8 on all edits
 
 ON NEXT REBOOT:
-  • Guardian will auto-start at boot
-  • Protection continues automatically
-  • No manual intervention needed
+  * Guardian will auto-start at boot
+  * Protection continues automatically
+  * No manual intervention needed
 
 IF CORRUPTION APPEARS:
   1. Guardian detects it within 30 seconds
@@ -170,8 +170,8 @@ Run as Administrator (for system-wide enforcement):
   C:\Users\kyleh\unicode_fortress_layer1.ps1
 
 Then Reboot to apply:
-  • System-wide UTF-8 in registry
-  • Machine-level environment variables
+  * System-wide UTF-8 in registry
+  * Machine-level environment variables
 
 
  CONGRATULATIONS!

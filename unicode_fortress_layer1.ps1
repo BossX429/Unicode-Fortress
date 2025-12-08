@@ -55,7 +55,7 @@ if (Test-Path $psProfile) {
         Add-Content -Path $psProfile -Value "`n$utf8Config" -Encoding UTF8
         Write-Host "   PowerShell profile configured for UTF-8" -ForegroundColor Green
     } else {
-        Write-Host "  ℹ  PowerShell already configured" -ForegroundColor Cyan
+        Write-Host "  [INFO]  PowerShell already configured" -ForegroundColor Cyan
     }
 }
 

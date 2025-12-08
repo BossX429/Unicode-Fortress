@@ -104,10 +104,10 @@ Files: 6 valid UTF-8 files with complex characters
 TEST FILES:
    emoji.txt - Emojis:   
    chinese.txt - Chinese:  
-   arabic.txt - Arabic: مرحبا بالعالم
-   russian.txt - Russian: Привет мир
-   math.txt - Math symbols: ∑∫∞≠≈±×÷
-   special.txt - Special: €£¥©®™
+   arabic.txt - Arabic: ????? ???????
+   russian.txt - Russian: ?????? ???
+   math.txt - Math symbols: ????~=???
+   special.txt - Special: ??????
 
 GUARDIAN RESPONSE:
   Files Flagged: 0 
