@@ -134,7 +134,7 @@ def main():
     log(f"Quarantine: {QUARANTINE_DIR}")
     log("")
     
-    ensure_quarantine_dir()
+    ensure_directories()
     
     scan_count = 0
     while True:
